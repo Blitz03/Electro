@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+</head>
+<body>
+    <!-- Header -->
+  <div class="header">
+    <div class="top-header">
+      <div class="contact">
+        <ul>
+          <li>
+            <a href="#">
+            <i class="fa-solid fa-phone needs-font-size"></i>
+            <span>+021-95-51-84</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            <i class="fa-regular fa-envelope"></i>
+            <span>email@email.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            <i class="fa-solid fa-location-dot needs-font-size"></i>
+            <span>1734 Stonecoal Road</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="info">
+        <ul>
+          <li>
+            <a href="#">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <span>USD</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            <i class="fa-regular fa-user"></i>
+            <span>My Account</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-header">
+      <div class="container">
+        <div class="cart">
+          <div class="cart-container">
+            <i class="fa-solid fa-xmark close"></i>
+            <div class="cart-products">
+            </div>
+            <div class="subtotal">
+              <span class="selected"><span>0</span> Item(s) selected</span>
+              <div class="total-content">
+                <span class="total-text">SUBTOTAL:</span>
+                <span class="total-number">$0</span>
+              </div>
+            </div>
+            <div class="buttons">
+              <button>View Cart</button>
+              <button>
+                Checkout
+                <i class="fa-solid fa-circle-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="logo">
+          <a href="#">Electro<span>.</span></a>
+        </div>
+        <div class="search">
+          <select name="categories">
+            <option value="all">All Categories</option>
+            <option value="one">Category 01</option>
+            <option value="two">Category 02</option>
+          </select>
+          <input type="text" placeholder="Search here">
+          <input type="submit" value="Search">
+        </div>
+        <div class="cart-side">
+          <div class="wishlist">
+            <i class="fa-regular fa-heart">
+              <span class="wish-noti">0</span>
+            </i>
+            <span>Your Wishlist</span>
+          </div>
+        <div class="header-cart">
+          <i class="fa-solid fa-cart-shopping">
+            <span class="cart-noti">0</span>
+          </i>
+          <span>Your Cart</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header -->
+  <!-- Section -->
+  <section>
+    <div class="lists">
+      <div class="container">
+        <ul>
+          <li><a href="#" class="home">Home</a></li>
+          <li><a href="#">Hot Deals</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Laptops</a></li>
+          <li><a href="#">Smartphones</a></li>
+          <li><a href="#">Cameras</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="collections">
+      <div class="container">
+        <div class="box">
+          <div class="content">
+            <h2>Laptop Collection</h2>
+            <div class="shop-click">
+              <a href="#">
+                SHOP NOW
+                <i class="fa-solid fa-circle-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="img">
+            <img src="https://preview.colorlib.com/theme/electro/img/shop01.png.webp" alt="">
+          </div>
+        </div>
+        <div class="box">
+          <div class="content">
+            <h2>Accessories Collection</h2>
+            <div class="shop-click">
+              <a href="#">
+                SHOP NOW
+                <i class="fa-solid fa-circle-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="img">
+            <img src="https://preview.colorlib.com/theme/electro/img/shop03.png.webp" alt="">
+          </div>
+        </div>
+        <div class="box">
+          <div class="content">
+            <h2>Cameras Collection</h2>
+            <div class="shop-click">
+              <a href="#">
+                SHOP NOW
+                <i class="fa-solid fa-circle-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="img">
+            <img src="https://preview.colorlib.com/theme/electro/img/shop02.png.webp" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="products">
+      <div class="container">
+        <div class="head">
+          <div class="head-title">
+            <h3>NEW PRODUCTS</h3>
+          </div>
+          <div class="head-lists">
+            <ul>
+              <li class="active">Laptops</li>
+              <li>Smartphones</li>
+              <li>Cameras</li>
+              <li>Accessories</li>
+            </ul>
+          </div>
+        </div>
+        <!-- box -->
+        <div class="box">
+          <div class="discounts">
+            <span class="discount">-30%</span>
+            <span class="new">NEW</span>
+          </div>
+          <div class="img">
+            <img src="https://preview.colorlib.com/theme/electro/img/product01.png.webp" alt="">
+          </div>
+          <div class="details">
+            <span class="category">CATEGORY</span>
+            <h4>PRODUCT NAME GOES HERE 1</h4>
+            <div class="price">
+              <span class="current">$980.00</span>
+              <span class="prev">$990.00</span>
+            </div>
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="options">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <div class="add-cart">
+            <button>
+              <i class="fa-solid fa-cart-shopping"></i>
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+        <!-- box -->
+        <!-- box -->
+        <div class="box">
+          <div class="discounts">
+            <span class="new">NEW</span>
+          </div>
+          <div class="img">
+            <img src="https://preview.colorlib.com/theme/electro/img/product02.png.webp" alt="">
+          </div>
+          <div class="details">
+            <span class="category">CATEGORY</span>
+            <h4>PRODUCT NAME GOES HERE 2</h4>
+            <div class="price">
+              <span class="current">$980.00</span>
+              <span class="prev">$990.00</span>
+            </div>
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="options">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <div class="add-cart">
+            <button>
+              <i class="fa-solid fa-cart-shopping"></i>
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+        <!-- box -->
+        <!-- box -->
+        <div class="box">
+          <div class="discounts">
+            <span class="discount">-30%</span>
+            <span class="new">NEW</span>
+          </div>
+          <div class="img">
+            <img src="https://preview.colorlib.com/theme/electro/img/product03.png.webp" alt="">
+          </div>
+          <div class="details">
+            <span class="category">CATEGORY</span>
+            <h4>PRODUCT NAME GOES HERE 3</h4>
+            <div class="price">
+              <span class="current">$980.00</span>
+              <span class="prev">$990.00</span>
+            </div>
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="options">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <div class="add-cart">
+            <button>
+              <i class="fa-solid fa-cart-shopping"></i>
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+        <!-- box -->
+        <!-- box -->
+        <div class="box">
+          <div class="discounts">
+            <span class="discount">-30%</span>
+            <span class="new">NEW</span>
+          </div>
+          <div class="img">
+            <img src="https://preview.colorlib.com/theme/electro/img/product04.png.webp" alt="">
+          </div>
+          <div class="details">
+            <span class="category">CATEGORY</span>
+            <h4>PRODUCT NAME GOES HERE 4</h4>
+            <div class="price">
+              <span class="current">$980.00</span>
+              <span class="prev">$990.00</span>
+            </div>
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="options">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <div class="add-cart">
+            <button>
+              <i class="fa-solid fa-cart-shopping"></i>
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+        <!-- box -->
+        <!-- box -->
+        <div class="box">
+          <div class="discounts">
+            <span class="new">NEW</span>
+          </div>
+          <div class="img">
+            <img src="https://preview.colorlib.com/theme/electro/img/product05.png.webp" alt="">
+          </div>
+          <div class="details">
+            <span class="category">CATEGORY</span>
+            <h4>PRODUCT NAME GOES HERE 5</h4>
+            <div class="price">
+              <span class="current">$980.00</span>
+              <span class="prev">$990.00</span>
+            </div>
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="options">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <div class="add-cart">
+            <button>
+              <i class="fa-solid fa-cart-shopping"></i>
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+        <!-- box -->
+        <!-- box -->
+        <div class="box ars">
+          <div class="discounts">
+            <span class="discount">-30%</span>
+            <span class="new">NEW</span>
+          </div>
+          <div class="img">
+            <img src="https://preview.colorlib.com/theme/electro/img/product06.png.webp" alt="">
+          </div>
+          <div class="details">
+            <span class="category">CATEGORY</span>
+            <h4>PRODUCT NAME GOES HERE 6</h4>
+            <div class="price">
+              <span class="current">$980.00</span>
+              <span class="prev">$990.00</span>
+            </div>
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="options">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <div class="add-cart">
+            <button>
+              <i class="fa-solid fa-cart-shopping"></i>
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+        <!-- box -->
+        <div class="arrows">
+          <i class="fa-solid fa-angle-left left"></i>
+          <i class="fa-solid fa-angle-right right"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Top Selling -->
+    <div class="top-selling">
+      <div class="container">
+        <h3>TOP SELLING</h3>
+        <div class="top-selling-products">
+          <!-- Box -->
+          <div class="box">
+            <div class="img">
+              <img src="https://preview.colorlib.com/theme/electro/img/product01.png.webp" alt="">
+            </div>
+            <div class="details">
+              <span class="category">CATEGORY</span>
+              <h4>PRODUCT NAME GOES HERE</h4>
+              <div class="selling-box-price">
+                <span class="current">$980.00</span>
+                <span class="prev">$980.00</span>
+              </div>
+            </div>
+          </div>
+          <!-- Box -->
+          <!-- Box -->
+          <div class="box">
+            <div class="img">
+              <img src="https://preview.colorlib.com/theme/electro/img/product02.png.webp" alt="">
+            </div>
+            <div class="details">
+              <span class="category">CATEGORY</span>
+              <h4>PRODUCT NAME GOES HERE</h4>
+              <div class="selling-box-price">
+                <span class="current">$980.00</span>
+                <span class="prev">$980.00</span>
+              </div>
+            </div>
+          </div>
+          <!-- Box -->
+          <!-- Box -->
+          <div class="box">
+            <div class="img">
+              <img src="https://preview.colorlib.com/theme/electro/img/product03.png.webp" alt="">
+            </div>
+            <div class="details">
+              <span class="category">CATEGORY</span>
+              <h4>PRODUCT NAME GOES HERE</h4>
+              <div class="selling-box-price">
+                <span class="current">$980.00</span>
+                <span class="prev">$980.00</span>
+              </div>
+            </div>
+          </div>
+          <!-- Box -->
+          <!-- Box -->
+          <div class="box">
+            <div class="img">
+              <img src="https://preview.colorlib.com/theme/electro/img/product04.png.webp" alt="">
+            </div>
+            <div class="details">
+              <span class="category">CATEGORY</span>
+              <h4>PRODUCT NAME GOES HERE</h4>
+              <div class="selling-box-price">
+                <span class="current">$980.00</span>
+                <span class="prev">$980.00</span>
+              </div>
+            </div>
+          </div>
+          <!-- Box -->
+          <!-- Box -->
+          <div class="box">
+            <div class="img">
+              <img src="https://preview.colorlib.com/theme/electro/img/product05.png.webp" alt="">
+            </div>
+            <div class="details">
+              <span class="category">CATEGORY</span>
+              <h4>PRODUCT NAME GOES HERE</h4>
+              <div class="selling-box-price">
+                <span class="current">$980.00</span>
+                <span class="prev">$980.00</span>
+              </div>
+            </div>
+          </div>
+          <!-- Box -->
+          <!-- Box -->
+          <div class="box ars">
+            <div class="img">
+              <img src="https://preview.colorlib.com/theme/electro/img/product06.png.webp" alt="">
+            </div>
+            <div class="details">
+              <span class="category">CATEGORY</span>
+              <h4>PRODUCT NAME GOES HERE</h4>
+              <div class="selling-box-price">
+                <span class="current">$980.00</span>
+                <span class="prev">$980.00</span>
+              </div>
+            </div>
+          </div>
+          <!-- Box -->
+        </div>
+        <div class="selling-arrows">
+          <i class="fa-solid fa-angle-left left"></i>
+          <i class="fa-solid fa-angle-right right"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Top Selling -->
+    <!-- Sign Up  -->
+    <div class="sign-up">
+      <div class="title">
+        <h3>Sign Up for the <span>NEWSLETTER</span></h3>
+      </div>
+      <div class="email-input">
+          <input type="email" placeholder="Enter Your Email">
+          <button>
+            <i class="fa-solid fa-envelope"></i>
+            Subscribe
+          </button>
+      </div>
+      <div class="social-media">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-pinterest"></i>
+      </div>
+    </div>
+    <!-- Sign Up  -->
+  </section>
+  <!-- Section -->
+  <!-- top footer -->
+  <div class="top-footer">
+    <div class="container">
+      <div class="lists">
+        <!-- List -->
+        <div class="list">
+          <div class="list-head">
+            <h3>ABOUT US</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+          </div>
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>1734 Stonecoal Road</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-phone"></i>
+                <span>+021-95-51-84</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-regular fa-envelope"></i>
+                <span>email@email.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- List -->
+        <!-- List -->
+        <div class="list">
+          <div class="list-head">
+            <h3>CATEGORIES</h3>
+          </div>
+          <ul>
+            <li><a href="#">Hot deals</a></li>
+            <li><a href="#">Laptops</a></li>
+            <li><a href="#">Smartphones</a></li>
+            <li><a href="#">Cameras</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+        <!-- List -->
+        <!-- List -->
+        <div class="list">
+          <div class="list-head">
+            <h3>INFORMATION</h3>
+          </div>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Orders and Returns</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <!-- List -->
+        <!-- List -->
+        <div class="list">
+          <div class="list-head">
+            <h3>SERVICE</h3>
+          </div>
+          <ul>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">View Cart</a></li>
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">Track My Order</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+        <!-- List -->
+      </div>
+    </div>
+  </div>
+  <!-- top footer -->
+  <footer>
+    <div class="cards">
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-regular fa-credit-card"></i>
+      <i class="fa-brands fa-cc-paypal"></i>
+      <i class="fa-brands fa-cc-mastercard"></i>
+      <i class="fa-brands fa-cc-discover"></i>
+      <i class="fa-brands fa-cc-amex"></i>
+    </div>
+    <div class="text">
+      <span>Copyright ©2022 All rights reserved | This template is made with by <span class="footer-span">Colorlib</span></span>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>

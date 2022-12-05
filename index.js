@@ -1,238 +1,118 @@
-//Lists effect
-let listsA = document.querySelectorAll(".lists .container ul li a");
+// Menu
+let menuIcon = document.querySelector(".menu");
+let menuList = document.querySelector(".menu-list");
 
-for (let i = 0; i < listsA.length; i++) {
-  let button = listsA[i];
-  button.addEventListener("click", () => {
-    button.style.setProperty("--width-none", "100%");
-    return;
-  });
-};
+menuIcon.addEventListener("click", () => {
+  menuList.classList.toggle("active");
+});
+// Menu
 
-let listsB = document.querySelectorAll(".products .container .head .head-lists ul li");
+// Cart
+let cartIcon = document.querySelector(".cart-icon");
+let cart = document.querySelector(".cart");
 
-for (let i = 0; i < listsB.length; i++) {
-  let button = listsB[i];
-  button.addEventListener("click", () => {
-    button.style.setProperty("--width-none", "100%");
-    button.style.color = "#D10024";
-  });
-};
-//Lists effect
 
-//الشغل التئيل بئى
+cartIcon.addEventListener("click", () => {
+  cart.style.cssText = "visibility: visible; opacity: 1; top: 100%;";
+});
 
-let myCart = document.querySelector(".cart");
-let myCartIcon = document.querySelector(".header-cart");
-let myClose = document.querySelector(".close");
-let myAddButtons = document.querySelectorAll(".add-cart button");
+let cartCloseIcon = document.querySelector(".close");
+
+cartCloseIcon.addEventListener("click", () => {
+  cart.style.cssText = "visibility: hidden; opacity: 0; top: -100%;";
+});
+
+let removeIcons = document.querySelectorAll(".remove-icon i");
 let counter = 0;
 
-
-//Remove
-updateCartTotal()
-let removeButtons = document.querySelectorAll(".remove");
-for (let i = 0; i < removeButtons.length; i++) {
-  let button = removeButtons[i];
+for (let i = 0; i < removeIcons.length; i++) {
+  let button = removeIcons[i];
   button.addEventListener("click", removeItem);
 };
-function removeItem(e) {
-  if (counter < 0) {
-    counter = 0;
-  };
-  counter-= 1;
-  countingUpdate()
-  let button = e.target;
-  button.parentElement.parentElement.remove();
-  updateCartTotal()
-};
-//Remove
 
-
-
-// Open
-myCartIcon.addEventListener("click", openCart);
-
-
-//Close
-myClose.addEventListener("click", closeCart);
-
-
-//Add
-for (let i = 0; i < myAddButtons.length; i++) {
-  let button = myAddButtons[i];
-  button.addEventListener("click", addToCartClicked);
-};
-
-let quantityInputs = document.querySelectorAll(".details-bottom input");
-for (let i = 0; i < quantityInputs.length; i++) {
-  input = quantityInputs[i];
-  input.addEventListener("change", updateCartTotal)
-};
-
-
-function openCart() {
-  myCart.style.display = "block";
-};
-
-function closeCart() {
-  myCart.style.display = "none";
-};
-
-
-function countingUpdate() {
-  document.querySelector(".cart-noti").innerText = counter;
-  document.querySelector(".selected span").innerText = counter;
-}
-
-// function addToCart(e) {
-//   updateCartTotal()
-//   counter++;
-//   let button = e.target;
-//   let productBox = button.parentElement.parentElement;
-//   let imgSrc = productBox.querySelector(".img img").src;
-//   let title = productBox.querySelector(".details h4").innerText;
-//   let price = productBox.querySelector(".price .current").innerText;
-//   let products = document.querySelector(".cart-products");
-//   let titles = document.querySelectorAll(".cart-box h4");
-//   let quantityInput = document.querySelectorAll(".quantity");
-//   for (let i = 0; i < titles.length; i++) {
-//     if (titles[i].innerText === title) {
-//       quantityInput[i].value++;
-//       return;
-//     };
-//   };
-//   let newBox = document.createElement("div");
-//   newBox.classList.add("cart-box");
-//   let newBoxContent = `
-//     <div class="img">
-//       <i class="fa-sharp fa-solid fa-xmark remove"></i>
-//       <img src="${imgSrc}" alt="">
-//     </div>
-//     <div class="cart-details">
-//       <h4>${title}</h4>
-//       <div class="details-bottom">
-//         <input type="number" min="1" value="1" class="quantity">
-//         <span class="cart-box-price">${price}</span>
-//       </div>
-//     </div>
-//   `
-//   newBox.innerHTML = newBoxContent;
-//   products.prepend(newBox)
-//   newBox.querySelector(".remove").addEventListener("click", removeItem);
-//   newBox.querySelector(".details-bottom input").addEventListener("change", updateCartTotal);
-//   counter++;
-//   updateCartTotal()
-// };
-
-function addToCartClicked(event) {
+function removeItem(event) {
+  counter--;
   let button = event.target;
-  let productBox = button.parentElement.parentElement;
-  let title = productBox.querySelector(".details h4").innerText;
-  let price = productBox.querySelector(".price .current").innerText;
-  let imgSrc = productBox.querySelector("img").src;
-  addItemToCart(title, price, imgSrc);
+  button.parentElement.parentElement.remove();
+  updateCounter();
   updateCartTotal();
 };
 
+let quantityInputs = document.querySelectorAll(".cart-box input");
 
-function addItemToCart(title, price, imgSrc) {
-  let products = document.querySelector(".cart-products");
-  let titles = document.querySelectorAll(".cart-box h4");
-  let quantityInput = document.querySelectorAll(".quantity");
-  console.log(quantityInput)
-  for (let i = 0; i < titles.length; i++) {
-    if (titles[i].innerText === title) {
-      quantityInput[i].value++;
+for (let i = 0; i < quantityInputs.length; i++) {
+  let input = quantityInputs[i];
+  input.addEventListener("change", updateCartTotal);
+}
+
+let addButtons = document.querySelectorAll(".add-to-cart button");
+
+for (let i = 0; i < addButtons.length; i++) {
+  let button = addButtons[i];
+  button.addEventListener("click", addToCartClicked);
+};
+
+function addToCartClicked(event) {
+  counter++;
+  let button = event.target;
+  let product = button.parentElement.parentElement;
+  let imgSrc = product.querySelector("img").src;
+  let title = product.querySelector("h4").innerText;
+  let price = product.querySelector(".new-price").innerText;
+  addToCart(imgSrc, title, price);
+  updateCartTotal();
+};
+
+function addToCart(imgSrc, title, price) {
+  let cartBoxImg = document.querySelectorAll(".cart-box img");
+  let quantityInputs = document.querySelectorAll(".quantity");
+  for (let i = 0; i < cartBoxImg.length; i++) {
+    if (cartBoxImg[i].src === imgSrc) {
+      quantityInputs[i].value++;
+      counter--;
       return;
     };
   };
   let newBox = document.createElement("div");
+  let cartProducts = document.querySelector(".cart-products");
   newBox.classList.add("cart-box");
+  cartProducts.appendChild(newBox);
   let newBoxContent = `
-    <div class="img">
-      <i class="fa-sharp fa-solid fa-xmark remove"></i>
-      <img src="${imgSrc}" alt="">
-    </div>
-    <div class="cart-details">
-      <h4>${title}</h4>
-      <div class="details-bottom">
-        <input type="number" min="1" value="1" class="quantity">
-        <span class="cart-box-price">${price}</span>
-      </div>
-    </div>
-  `
+  <div class="remove-icon">
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+  <div class="img">
+    <img src="${imgSrc}" alt="">
+  </div>
+  <div class="details">
+    <h4>${title}</h4>
+    <input type="number" class="quantity" value="1" min="1">
+    <span class="cart-price">${price}</span>
+  </div>`
   newBox.innerHTML = newBoxContent;
-  products.prepend(newBox)
-  newBox.querySelector(".remove").addEventListener("click", removeItem);
-  newBox.querySelector(".details-bottom input").addEventListener("change", updateCartTotal);
-  counter++;
-  countingUpdate()
+  newBox.querySelector(".remove-icon i").addEventListener("click", removeItem);
+  newBox.querySelector("input").addEventListener("change", updateCartTotal);
+  updateCounter();
+};
+
+let cartQuantity = document.querySelector(".cart-icon span");
+let selectedItems = document.querySelector(".selected");
+
+function updateCounter() {
+  cartQuantity.innerText = counter;
+  selectedItems.innerText = counter;
 };
 
 function updateCartTotal() {
-  let boxes = document.querySelectorAll(".cart-box");
   let total = 0;
+  let boxes = document.querySelectorAll(".cart-box");
   for (let i = 0; i < boxes.length; i++) {
     let box = boxes[i];
-    let priceElement = box.querySelector(".details-bottom span").innerText.replace("$", "");
-    let price = parseFloat(priceElement)
-    let quantity = box.querySelector(".quantity").value;
-    total = total + (quantity * price);
+    let priceElement = box.querySelector(".cart-price").innerHTML.replace("$", "");
+    let price = parseFloat(priceElement);
+    let quantity = box.querySelector("input").value;
+    total = total + (price * quantity);
   };
-  let totalNum = document.querySelector(".total-number");
-  totalNum.innerText = "$" + total;
+  document.querySelector(".subtotal-number").innerText = "$" + total;
 };
-
-//الشغل التئيل بئى
-
-
-//الشغل التئيل التاني بئى
-
-//sliders
-
-let productsArrowRight = document.querySelector(".arrows .right");
-let productsArrowLeft = document.querySelector(".arrows .left");
-let newProductsBox = document.querySelectorAll(".products .box")
-let sellingArrowRight = document.querySelector(".selling-arrows .right");
-let sellingArrowLeft = document.querySelector(".selling-arrows .left");
-let sellingProductsBoxParent = document.querySelector(".top-selling-products");
-// let sellingProductsBox = document.querySelector(".top-selling-products .box");
-let current = 1;
-let sellingCurrent = 1;
-
-productsArrowRight.addEventListener("click", () => {
-  current--;
-  for (let i = 0; i < newProductsBox.length; i++) {
-    let box = newProductsBox[i];
-    box.style.transform = `translateX(${current * 285}px)`;
-  };
-  if (current < newProductsBox.length) {
-    current = 0;
-  };
-});
-productsArrowLeft.addEventListener("click", () => {
-  current++;
-  for (let i = 0; i < newProductsBox.length; i++) {
-    let box = newProductsBox[i];
-    box.style.transform = `translateX(${current * 285}px)`;
-  };
-  if (current < newProductsBox.length) {
-    current = 0;
-  };
-});
-
-
-// sellingArrowRight.addEventListener("click", () => {
-//   sellingCurrent--;
-//   sellingProductsBoxParent.style.transform = `translateX(${sellingCurrent * 50}px)`;
-// });
-
-// sellingArrowLeft.addEventListener("click", () => {
-// });
-
-
-
-//sliders
-
-//الشغل التئيل التاني بئى
+// Cart

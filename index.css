@@ -74,11 +74,23 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  flex-wrap: wrap;
+}
+@media (max-width: 420px) {
+  .header .top-header .container ul {
+    gap: 10px;
+  }
 }
 .header .top-header .container ul li a {
   color: #FFF;
   font-size: 12px;
   transition: .2s;
+}
+@media (max-width: 423px) {
+  .header .top-header .container .info ul li {
+    display: flex;
+    align-items: center;
+  }
 }
 .header .top-header .container ul li a:hover {
   color: var(--main-color);
@@ -125,6 +137,11 @@
   height: 40px;
   padding: 0 15px;
   color: rgb(107, 107, 107);
+}
+@media (max-width: 420px) {
+  .header .main-header .container .search select {
+    width: 30px;
+  }
 }
 .header .main-header .container .search input {
   width: 300px;
@@ -533,13 +550,19 @@ section .products .container .products-head .products-head-list ul {
   align-items: center;
   gap: 20px;
 }
-section .products .container .products-head .products-head-list ul li {
-  position: relative;
-}
 @media (max-width: 767px) {
   section .products .container .products-head ul {
     justify-content: center;
   }
+}
+@media (max-width: 450px) {
+  section .products .container .products-head .products-head-list ul {
+    font-size: 13px;
+    gap: 10px;
+  }
+}
+section .products .container .products-head .products-head-list ul li {
+  position: relative;
 }
 section .products .container .products-head .products-head-list ul li a {
   cursor: pointer;
@@ -842,6 +865,11 @@ section .newsletter .container form input {
   padding: 10px 15px;
   font-size: 15px;
   height: 40px;
+}
+@media (max-width: 450px) {
+  section .newsletter .container form input {
+    width: 50%;
+  }
 }
 section .newsletter .container form input:focus {
   outline: none;
